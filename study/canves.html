@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canves</title>
+</head>
+<body>
+<canvas id="csser-com-Canvas" width="1000" height="1000">
+    <!-- 向后兼容的内容 -->
+</canvas>
+<script>
+    var canvas = document.getElementById("csser-com-Canvas");
+    var c = canvas.getContext("2d");
+    //c.fillRect(x, y, width, height);
+    c.fillStyle = "rgb(255, 0, 0)";//改变填充颜色
+    c.strokeStyle = "rgb(255, 0, 0)";//改变线框颜色
+    c.fillRect(0, 0, 50, 50);//绘制实心矩形
+    c.strokeRect(50, 50, 100, 100);//绘制线框矩形
+
+    c.lineWidth = 20;//改变线宽
+
+    //beginPath 开始一个新路径
+   // moveTo 移动路径的绘图起点
+   // lineTo 从moveTo定义的点开始绘制连续的路径，或者从上一次的lineTo的终点开始绘制。
+    //closePath 连接最后的点和最初的点并关闭路径绘制
+    //fill 用颜色填充路径
+    //stroke 描变路径
+    c.beginPath();
+    c.moveTo(100, 100);
+    c.lineTo(100, 250);
+    c.lineTo(250, 250);
+    c.closePath;
+    c.fill();
+
+
+</script>
+</body>
+</html>
