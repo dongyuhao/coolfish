@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8">
+</head>
+<body>
+<div id="Demo1">
+    <style>
+        input{
+            display: block;
+            border:1px solid #ccc;/*实线*/
+        }
+
+        :invalid{`
+            border-color: #DB729C;
+            -webkit-box-shadow:0 0 5px rgba(27,0,97,.5);
+
+        }
+
+        :required{
+            border-color: #1be032;
+            -webkit-box-shadow:0 0 5px rgba(57,237,78,.5);
+        }
+
+    </style>
+<form id="myForm">
+    Add your telephone:<input type="tel" name="phone" required="required" autocomplete="on"/><br/>
+           <!--required阻止用户填写未被满足的表单--> <!--autocomplete自动记录最近填写信息-->
+    Demo2 Add telephone:<input type="tele" name="myphone" pattern="\d\d\d-\d\d\d-\d\d\d\d"/>
+    <!--不满足pattern限制，表单不会提交-->
+Quantity(between 1 and 5):<input type="number" name="quantity" min="1" max="5" /><br/>
+    Enter Your Eamil: <input type="email" name="myEamil" /><br/>
+
+    Favorite Animal:<input type="text" name="animal" list="animals" /><br/>
+      <datalist id="animals">
+          <option value="Dog">
+          <option value="Dolphin">
+          <option value="Duck">
+          <option value="Cat">
+          <option value="Bird">
+          <option value="Mouse">
+          </datalist>
+
+
+
+</form>
+<input type="submit" form="myForm"/>
+<button type="submit" formnovalidate="formnovalidate">save</button>
+<script>
+    myForm.quantity.setCustomValidity('别超过1,别大于5')
+    function updateMessage(input){
+        if(input.value ==''){
+
+        }
+        input.setCustomValidity('');
+    }
+    </script>
+
+</div>
+   <div>
+<form>
+    Enter Date:<input type="date" name="departingDate" />
+    这是滚动条：<input type="range" name="shoeSize" min="0" max="100" step="1" value="11" />
+    用量值：<meter value="2" min="0" max="10"></meter><br />
+    另一个用法：<progress value="33" max="100"></progress>
+    <input id="myInput" type="text" placeholder="enter text">
+    <script>
+        document.getElementById('myInput').addEventListener('input',function(e){
+            console.log("balabala:" , e.target);
+        },false);
+        </script>
+</form>
+       </div>
+</body>
+</html>
