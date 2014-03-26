@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jquery Moblile</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.1.1/jquery.bobile-1.1.1.min.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script>
+        $(function(){
+            var Geo={};
+            var geocoder;
+
+
+            if (navigator.geolocation){
+                geocoder = new google.maps.Geocoder();
+                navigator.geolocation.getCurrentPosition(success,error);
+            }
+            function success(position){
+                Geo.lat = position.coords.latitude;
+                Geo.lng = position.coords.longitude;
+                populateHeader(Geo.lat,Geo.lng);
+                reverseGeo(Geo.lat,Geo.lng);
+            }
+
+            function error(){
+                console("Geocoder failed");
+
+            }
+
+            function populateHeader(lat,lng){
+                $('#Lat').html(lat);
+                $('#Long').html(lng);
+            }
+
+
+            function reverseGeo(lat,lng){
+                var latlng = new google.maps.LatLng(lat,lng);
+
+                geocoder.geocode({'latLng':latlng},
+                        function(results,status){
+                            if(status == google.maps.GeocoderStatus.OK){
+
+
+                            if(results[1]){
+                                var addressComponents = addressComponents;
+                                for(var i=0; i<addressComponents.length;i++){
+                                    for(var b=0;b<addressComponents.length;i++){
+
+                                        if(addressComponents[i].types[b] == "locality"){
+                                            city = addressComponents[i];
+                                            break;
+                                        }
+                                        var adminString = "administrative_area_level_1";
+                                        if(addressComponents[i].types[b] == adminString)
+                                        {
+                                            state = results[0].address_components[i];
+                                            break;
+                                        }
+                                    }
+                                }
+
+                                Geo.location_name = city.long_name + ","+ state.short_name;
+                                $('#storeLocation').html(Geo.location_name);
+                            }else{
+                                console.log("No results found");
+
+                            }
+                        }else{
+                    console.log("Geocoder failed due to:"+status);
+                }
+            });
+
+            }
+        });
+    </script>
+</head>
+<body>
+<div data-role="page" data-theme="a">
+
+    <div data-role="header">
+        <h1>Geo Location</h1>
+    </div><!--header-->
+
+    <div class="geo-coords">
+        GeoLocation:<span id="Lat">Lat:...</span>
+        <span id="Long">long:...</span>
+    </div>
+
+    <a href="./html5demo2.html" data-role="button" data-inline="true">back</a>
+
+
+
+
+</div>
+</body>
+</html>
