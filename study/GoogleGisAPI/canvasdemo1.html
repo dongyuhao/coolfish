@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>context</title>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8">
+
+</head>
+
+<body>
+<p>要使用的图片：</p>
+
+
+<img src="./map.png" alt="tulip" id="tulip" style="margin-left:0px;" />
+
+<p>Canvas:</p>
+
+<canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;">
+    Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script>
+    document.getElementById("tulip").onload=function(){
+        var c=document.getElementById("myCanvas");
+        var ctx=c.getContext("2d");
+        var img=document.getElementById("tulip");
+        ctx.drawImage(img,90,130,90,80,20,20,90,80);
+        /*img,*/
+    };
+</script>
+
+
+<p>要使用的视频：</p>
+
+<video id="video1" controls width="270" autoplay>
+    <source src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4" type='video/mp4'>
+    <source src="http://www.w3school.com.cn/example/html5/mov_bbb.ogg" type='video/ogg'>
+    <source src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4" type='video/webm'>
+</video>
+
+<p>画布（每 20 毫秒，代码就会绘制视频的当前帧）：</p>
+
+<canvas id="myCanvas1" width="270" height="135" style="border:1px solid #d3d3d3;">
+    Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script>
+
+    var v=document.getElementById("video1");
+    var c=document.getElementById("myCanvas1");
+    ctx=c.getContext('2d');
+
+    v.addEventListener('play', function() {var i=window.setInterval(function() {ctx.drawImage(v,0,0,270,135)},20);},false);
+    v.addEventListener('pause',function() {window.clearInterval(i);},false);
+    v.addEventListener('ended',function() {clearInterval(i);},false);
+
+</script>
+</body>
+</html>
