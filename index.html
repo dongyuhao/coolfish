@@ -1,178 +1,47 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Coolfish by dongyuhao</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/main.js"></script>
-    <script type="text/css">
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Cool Fish Home Page</title>
+		<meta name="description" content="Responsive Animated Border Menus with CSS Transitions" />
+		<meta name="keywords" content="navigation, menu, responsive, border, overlay, css transition" />
 
-	.btn span {
-    display: inline-block;
-    padding: 10px  20px;
-    font-family: "cooper-black-std-1", "cooper-black-std-2";
-    text-shadow: 0 -1px 1px rgba(19,65,88,.8);
-    background: #3194c6;
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#3194c6), to(#5bacd6));
-    background: -moz-linear-gradient(#3194c6, #5bacd6);
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
-}
-@-webkit-keyframes greenPulse {
-    from { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
-    50% { background-color: #91bd09; -webkit-box-shadow: 0 0 18px #91bd09; }
-    to { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
-}
-a.green.button {
-    -webkit-animation-name: greenPulse;
-    -webkit-animation-duration: 2s;
-    -webkit-animation-iteration-count: infinite;
-}
-
-.transparent.header {
-    background: #333;
-}
-section[role="main"] {
-    background: #333;
-    color: #fff;
-}
-section[role="main"] h1 {
-    color: #fff;
-}
-section[role="main"] h2 {
-    color: #fff;
-}
-section[role="main"] h3 {
-    color: #fff;
-}
-.button {
-    margin-right: 0.5em;
-    border-radius: 4px;
-}
-ol {
-    margin-left: 2em;
-}
-div#sidebarAd.cleanslate {
-    background: #444 !important;
-    color: #fff !important;
-}
-div#sidebarAd.cleanslate .ad-sponsor {
-    color: #ccc !important;
-}
-.zurb-footer-top {
-    background: #222;
-}
-
-@-webkit-keyframes bigAssButtonPulse {
-    from { background-color: #749a02; -webkit-box-shadow: 0 0 25px #333; }
-    50% { background-color: #91bd09; -webkit-box-shadow: 0 0 50px #91bd09; }
-    to { background-color: #749a02; -webkit-box-shadow: 0 0 25px #333; }
-}
-
-@-webkit-keyframes greenPulse {
-    from { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
-    50% { background-color: #91bd09; -webkit-box-shadow: 0 0 18px #91bd09; }
-    to { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
-}
-
-@-webkit-keyframes bluePulse {
-    from { background-color: #007d9a; -webkit-box-shadow: 0 0 9px #333; }
-    50% { background-color: #2daebf; -webkit-box-shadow: 0 0 18px #2daebf; }
-    to { background-color: #007d9a; -webkit-box-shadow: 0 0 9px #333; }
-}
-
-@-webkit-keyframes redPulse {
-    from { background-color: #bc330d; -webkit-box-shadow: 0 0 9px #333; }
-    50% { background-color: #e33100; -webkit-box-shadow: 0 0 18px #e33100; }
-    to { background-color: #bc330d; -webkit-box-shadow: 0 0 9px #333; }
-}
-
-@-webkit-keyframes magentaPulse {
-    from { background-color: #630030; -webkit-box-shadow: 0 0 9px #333; }
-    50% { background-color: #a9014b; -webkit-box-shadow: 0 0 18px #a9014b; }
-    to { background-color: #630030; -webkit-box-shadow: 0 0 9px #333; }
-}
-
-@-webkit-keyframes orangePulse {
-    from { background-color: #d45500; -webkit-box-shadow: 0 0 9px #333; }
-    50% { background-color: #ff5c00; -webkit-box-shadow: 0 0 18px #ff5c00; }
-    to { background-color: #d45500; -webkit-box-shadow: 0 0 9px #333; }
-}
-
-@-webkit-keyframes orangellowPulse {
-    from { background-color: #fc9200; -webkit-box-shadow: 0 0 9px #333; }
-    50% { background-color: #ffb515; -webkit-box-shadow: 0 0 18px #ffb515; }
-    to { background-color: #fc9200; -webkit-box-shadow: 0 0 9px #333; }
-}
-
-a.button {
-    -webkit-animation-duration: 2s;
-    -webkit-animation-iteration-count: infinite;
-}
-
-.green.button { -webkit-animation-name: greenPulse; -webkit-animation-duration: 3s; }
-.blue.button { -webkit-animation-name: bluePulse; -webkit-animation-duration: 4s; }
-.red.button { -webkit-animation-name: redPulse; -webkit-animation-duration: 1s; }
-.magenta.button { -webkit-animation-name: magentaPulse; -webkit-animation-duration: 2s; }
-.orange.button { -webkit-animation-name: orangePulse; -webkit-animation-duration: 3s; }
-.orangellow.button { -webkit-animation-name: orangellowPulse; -webkit-animation-duration: 5s; }
-
-.wall-of-buttons { text-align: center; margin-top: 2em; margin-bottom: 2em; }
-
-	
-    </script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
-  </head>
-  <body>
-
-      <header>
-        <h1>Coolfish</h1>
-        <p>coolfish</p>
-      </header>
-
-      <div id="banner">
-        <span id="logo"></span>
-
-        <a href="https://github.com/dongyuhao/coolfish" class="button fork"><strong>View On GitHub</strong></a>
-        <div class="downloads">
-          <span>Downloads:</span>
-         <a href="index1.html">Demo1</a>
-        </div>
-      </div><!-- end banner -->
-
-    <div class="wrapper">
-      <nav>
-        <ul></ul>
-      </nav>
-      <section>
-        <h1>
-<a name="coolfish" class="anchor" href="#coolfish"><span class="octicon octicon-link"></span></a>coolfish</h1>
-
-<p>Hello , ，欢迎来到我的网页，么么哒~</p>
-
-<a class="green button" href="index1.html">真正的页面在这里</a>
-
-
-
-       
-    
-
-<img src="" alt=""></img>
-      </section>
-      <footer>
-        <p>Project maintained by <a href="https://github.com/dongyuhao">dongyuhao</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
-      </footer>
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
-  </body>
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="stylesheets/normalize1.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/demo.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/icons.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/style5.css" />
+		<script src="javascripts/modernizr.custom.js"></script>
+		<script src="javascripts/changeurl.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+			
+			
+			<iframe src="homepage.html" id="iframepage" name="iframepage" frameBorder=0 scrolling=no width="100%" onLoad="iFrameHeight()"></iframe>
+			
+			</header>
+			<nav id="bt-menu" class="bt-menu">
+				<a href="#" class="bt-menu-trigger"><span>Menu</span></a>
+				<ul>
+					<li><a href="homepage.html" target="iframepage">首页</a></li>
+					<li><a href="image.html" target="iframepage"">摄影</a></li>
+					<li><a href="#">美食</a></li>
+					<li><a href="game.html" target="iframepage">游戏</a></li>
+					<li><a href="about.html" target="iframepage">学习</a></li>
+				</ul>
+				<ul>
+					<li><a href="http://www.twitter.com/codrops" class="bt-icon icon-twitter">Twitter</a></li>
+					<li><a href="https://plus.google.com/101095823814290637419" class="bt-icon icon-gplus">Google+</a></li>
+					<li><a href="http://www.facebook.com/pages/Codrops/159107397912" class="bt-icon icon-facebook">Facebook</a></li>
+					<li><a href="https://github.com/codrops" class="bt-icon icon-github">icon-github</a></li>
+				</ul>
+			</nav>
+		</div><!-- /container -->
+	</body>
+	<script src="javascripts/classie.js"></script>
+	<script src="javascripts/borderMenu.js"></script>
 </html>
